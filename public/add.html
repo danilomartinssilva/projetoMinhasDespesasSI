@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8">
         
+        <title>Adicionar Despesa</title>
         <!--BOOTSTRAP -->        
         <script src="assets/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css"
@@ -40,11 +41,9 @@
                             <li class="nav-item active">
                               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                             </li>
-                            <!--LINK PARA ADD-->
                             <li class="nav-item">
-                              <a class="nav-link" href="add.html">Adicionar Despesa</a>
+                              <a class="nav-link" href="#">Link</a>
                             </li>
-                            <!--FINAL LINK ADD -->    
                             <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Dropdown
@@ -67,18 +66,34 @@
                         </div>
                 </nav>   
                 
-            <div class="card" style="width: 18rem;">                                  
-                    <div class="card-body">
-                        <h5 class="card-title">Cadastro de Despesas</h5>
-                        <p class="card-text">Projeto em SI que visa criar um software que faça o controle de despesas.</p>                        
-                        <a href="#" class="btn btn-primary">Cadastrar</a>
+                <form>
+                    <div class="form-group">
+                      <label for="description">Descrição </label>
+                      <input type="text"
+                       class="form-control" id="description"
+                         placeholder="Exemplo (Gasolina)">                      
                     </div>
+                    <div class="form-group">
+                        <label for="number">Valor </label>
+                        <input type="number"
+                         class="form-control" id="amount" 
+                          placeholder="R$ 10,00">                      
                     </div>
+                    <div class="form-group">
+                        <label for="dateAdd">Data </label>
+                        <input type="date" 
+                        class="form-control" id="dateAdd" 
+                         placeholder="05/06/2018">  
+                    </div>
+                    <button type="submit"
+                     class="btn btn-primary">Submit</button>
+                  </form>
+
         
         </div>
-
-
     
+        <script src="assets/js/App.js"/>
+
     </body>
 
 </html>
