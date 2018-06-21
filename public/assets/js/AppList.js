@@ -1,8 +1,7 @@
 function RetornarDespesas(){
-    var lista= document.getElementById('listaResultados');  
     
-    var conteudo = `<tbody>`;
-    
+    var conteudo = `<tbody>`;    
+    var somaTotal = 0;
     var list  = db.database()
         .ref('minhasdespesas').on('value',function(res){
             var i=0;
@@ -12,12 +11,17 @@ function RetornarDespesas(){
                 conteudo += `<tr>
                 <td>`+item.key+`</td>
                 <td>`+item.val().description+`</td>
-                <td>`+item.val().amount+`</td>
+                <td>R$ `+item.val().amount+`</td>
                 <td>`+item.val().dateAdd+`</td>
                 </tr>`;
+                somaTotal+= Number(item.val().amount);
             })
             conteudo +=`</tbody>`;
-            console.log(conteudo);
+            document.getElementById("somaTotal")
+                        .innerHTML += ' '+somaTotal;
+            
+
+
             $("#tbResultado").append(conteudo);
            
         });

@@ -6,5 +6,5 @@ function CadastrarDespesa(){
     console.log("Descrição",description,"Amount",amount,"DateAdd",dateAdd);       
     var despesas = {description:description,amount:amount,dateAdd:dateAdd};    
     db.database().ref('minhasdespesas').push(despesas);
-    
+    console.log(despesas);
 }
